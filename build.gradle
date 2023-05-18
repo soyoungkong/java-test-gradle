@@ -1,0 +1,46 @@
+/**
+ * SpringBoot 사용 안 할 떄
+ */
+//plugins {
+//    id 'java'
+//}
+//
+//group 'org.example'
+//version '1.0-SNAPSHOT'
+//
+//repositories {
+//    mavenCentral()
+//}
+//
+//dependencies {
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+//}
+//
+//test {
+//    useJUnitPlatform()
+//}
+
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.0.6' // 2023-05-18. java 17 필요.
+    id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.mc.testexample'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter' // 스프링 부트 2.2부터 Junit5으로 탑재됨. (기존은 4)
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
