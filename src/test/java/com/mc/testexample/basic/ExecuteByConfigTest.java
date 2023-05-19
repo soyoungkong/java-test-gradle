@@ -1,5 +1,6 @@
 package com.mc.testexample.basic;
 
+import com.mc.testexample.domain.Region;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -7,16 +8,21 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@EnableConfigurationProperties()
+@EnableConfigurationProperties
 @SpringBootTest(classes=Robot.class)
 class ExecuteByConfigTest {
 
-    @Value("${server.address.ip}")
-    private String property;
+    @Value("${app.type}")
+    private String type;
 
     @Test
     void execute_by_config(){
-        System.out.println(property);
-        assertEquals( "192.168.0.1", property);
+        assertEquals(Region.EU.name(), type);
+
+        if(type.equals(Region.EU.name())){
+            System.out.println(Region.EU.name());
+        }else{
+            System.out.println(Region.N_EU.name());
+        }
     }
 }
