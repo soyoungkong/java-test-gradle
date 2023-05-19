@@ -9,10 +9,11 @@
 -   Chaos Monkey : 운영 이슈를 로컬에서 재현하는 방법 
 -   ArchUnit : 어플리케이션 아키텍처 테스트
 
-
+<br/>
+<br/>
 
 ## 1\. JUnit5 소개
-
+  
 \- 자바 개발자가 가장 많이 사용하는 테스트용 프레임워크   
 \- 스프링 부트 2.2로 오르면서 JUnit5로 버젼업 됨. 
 
@@ -28,6 +29,8 @@
 -   Junit Platform : 실행 런처 제공. 콘솔, main 안, 툴 내 코드에서도 실행이 가능함. TestEngine API 제공
 -   Jupiter: TestEngine API 구현체 (JUnit 5를 제공)
 -   Vintage: TestEngine API 구현체 (JUnit 4와 3을 지원)
+
+<br/>
 
 
 ### 2) 기초 예제 
@@ -79,7 +82,9 @@ dependencies {
 }
 ```
 
- 
+<br/>
+
+
  (2) 테스트 파일 만들기
 
 스프링 부트 Main 파일을 써도 되고, 스프링 부트가 주가 되는 테스트는 아님으로 임의로 파일을 만들어도 된다.
@@ -161,6 +166,8 @@ class BasicTest {
 ```
 
 
+<br/>
+
 
 ### 3) 테스트 이름 표기 방법
 
@@ -179,6 +186,7 @@ class BasicTest {
 class BasicTest {
 ```
 
+<br/>
 
 (2) @DisplayName
 
@@ -205,7 +213,7 @@ IntellJ 콘솔에서 한글 깨짐이 문제는 아래로 해결했다.
 더 다양한 내용을 아래에 있다.
 [https://junit.org/junit5/docs/current/user-guide/#writing-tests-display-names](https://junit.org/junit5/docs/current/user-guide/#writing-tests-display-names)
 
- 
+<br/>
 
 ### 4) Assertion
 
@@ -221,7 +229,8 @@ IntellJ 콘솔에서 한글 깨짐이 문제는 아래로 해결했다.
 \- 마지막 파라미터로 메시지를 표현할 수 있는데, String을 직접 줄 수도 있고,  Supplier<String> 타입의 인스턴스를 람다형태로 전달할 수도 있다.
 
 \- 한 테스트에서 걸리면, 아래 테스트는 수행하지 않는다.
-  
+
+<br/>
 
 (1) assertEqulas(expected, actual)
 
@@ -295,7 +304,7 @@ private RobotStatus status = RobotStatus.AWAITING;
         });
     }
 ```
-
+<br/>
 (2) assertNotNull(actual) : 값이 null이 아닌지 확인
 
 (3) assertTrue(boolean) : 다음 조건이 참(true)인지 확인
@@ -326,7 +335,7 @@ void check_initial_time_out(){
 
 초기값을 3으로 해서 다시 돌려보면, 아래 결과를 얻을 수 있다.
 
-
+<br/>
 (4) assertAll(executables...) : 모든 확인 구문 확인
 
 \- 한 테스트에서 걸리면, 아래 테스트는 수행하지 않는데, 모든 테스트를 수행하기 위해서는 assertAll을 쓴다. 
@@ -344,8 +353,9 @@ void check_initial_values(){
 }
 ```
 
-아래 2개 테스트를 실패가 나도록 했기 때문에 아래와 같은 결과를 얻을 수 있다. 
+아래 2개 테스트를 실패가 나도록 했기 때문에 아래와 같은 결과를 얻을 수 있다.
 
+<br/>
 (5) assertThrows(expectedType, executable) : 예외 발생 확인
 
 ```
@@ -386,6 +396,7 @@ assertDoesNotThrow(()->new Robot(-10)),
 
 아니면 assertDoesNotThrow를 써서 에러와 에러 메시지를 직접 확인할 수도 있다.
 
+<br/>
 (6) assertTimeout(duration, executable) : 특정 시간 안에 실행이 완료되는지 확인
 
 ```
@@ -469,3 +480,4 @@ void create_new_robot_with_assertJ() {
     assertThat(robot.getTimeout()).isGreaterThan(12);
 }
 ```
+

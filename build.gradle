@@ -43,6 +43,38 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.26'
 }
 
+
+// test task
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+// 단일 task
+//tasks.named('test') {
+//    useJUnitPlatform {
+//        includeTags 'slow'
+//        excludeTags 'multi'
+//    }
+//}
+
+// task 분리
+// `gradle test`: integration tag가 붙은 테스트는 제외
+tasks.named('test') {
+    useJUnitPlatform {
+        excludeTags 'dev', 'prod'
+
+    }
+}
+
+task devTest(type: Test) {
+    useJUnitPlatform {
+        includeTags 'dev'
+    }
+}
+
+
+task prodTest(type: Test) {
+    useJUnitPlatform {
+        includeTags 'prod'
+    }
 }
