@@ -1,13 +1,10 @@
 package com.mc.testexample.basic;
 
-import com.mc.testexample.basic.custom.DevTest;
-import com.mc.testexample.basic.custom.LocalTest;
-import com.mc.testexample.basic.custom.ProdTest;
+import com.mc.testexample.basic.annotation.DevTest;
+import com.mc.testexample.basic.annotation.LocalTest;
+import com.mc.testexample.basic.annotation.ProdTest;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-
-import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
 import static org.junit.jupiter.api.Assertions.assertTrue;

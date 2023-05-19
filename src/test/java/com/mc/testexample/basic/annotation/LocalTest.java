@@ -1,4 +1,4 @@
-package com.mc.testexample.basic.custom;
+package com.mc.testexample.basic.annotation;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
