@@ -93,6 +93,7 @@ public class RobotServiceMockTest {
     // 2-3 Mock Stubbing 연습
     @Test
     void createRobotService3(@Mock PartService partService, @Mock RobotRepository robotRepository){
+
         RobotService robotService = new RobotService(partService, robotRepository);
 
         Robot robot  = new Robot (1500, "test robot");
@@ -111,6 +112,7 @@ public class RobotServiceMockTest {
     // 2-3 Mock Stubbing 연습
     @Test
     void verifyMock(@Mock PartService partService, @Mock RobotRepository robotRepository){
+        /* Given */
         RobotService robotService = new RobotService(partService, robotRepository);
 
         Robot robot  = new Robot (1500, "test robot");
@@ -120,9 +122,11 @@ public class RobotServiceMockTest {
         when(partService.findById(1L)).thenReturn(Optional.of(part));
         when(robotRepository.save(robot)).thenReturn(robot);
 
+        /* When */
         // 로봇에 파츠 셋팅
         robotService.createNewRobot(1L, robot);
 
+        /* Then */
         assertEquals(part, robot.getPart());
 
         // 3. 객체 검증 : createNewRobot에서 partService가 쓰인 횟수, 순서 등등
