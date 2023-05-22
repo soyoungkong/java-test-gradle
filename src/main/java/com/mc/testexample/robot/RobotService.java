@@ -18,6 +18,11 @@ public class RobotService {
     public Robot createNewRobot(Long partId, Robot robot){
         Optional<Part> part = partService.findById(partId);
         robot.setPart(part.orElseThrow(()-> new IllegalArgumentException("Parts doesn't exist for id :" + partId)));
-        return repository.save(robot);
+
+        robot = repository.save(robot);
+        partService.notify(robot); // verify 테스트용
+        partService.notify(part.get()); // verify 테스트용
+        partService.findById(partId); // verify 테스트용
+        return robot;
     }
 }
