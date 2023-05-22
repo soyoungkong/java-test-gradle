@@ -1,6 +1,6 @@
-package com.mc.testexample.basic.converter;
+package com.mc.testexample.robot.converter;
 
-import com.mc.testexample.basic.Robot;
+import com.mc.testexample.robot.Robot;
 import org.junit.jupiter.params.converter.ArgumentConversionException;
 import org.junit.jupiter.params.converter.SimpleArgumentConverter;
 

@@ -1,5 +1,6 @@
-package com.mc.testexample.basic;
+package com.mc.testexample.robot;
 
+import com.mc.testexample.robot.Basic;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;

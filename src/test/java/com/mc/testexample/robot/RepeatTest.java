@@ -1,19 +1,17 @@
-package com.mc.testexample.basic;
+package com.mc.testexample.robot;
 
-import com.mc.testexample.basic.aggregator.RobotAggregator;
-import com.mc.testexample.basic.annotation.DevTest;
-import com.mc.testexample.basic.annotation.LocalTest;
-import com.mc.testexample.basic.annotation.ProdTest;
-import com.mc.testexample.basic.converter.RobotConverter;
+import com.mc.testexample.robot.aggregator.RobotAggregator;
+import com.mc.testexample.robot.converter.RobotConverter;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.RepetitionInfo;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.aggregator.AggregateWith;
 import org.junit.jupiter.params.aggregator.ArgumentsAccessor;
 import org.junit.jupiter.params.converter.ConvertWith;
-import org.junit.jupiter.params.provider.*;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.NullAndEmptySource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

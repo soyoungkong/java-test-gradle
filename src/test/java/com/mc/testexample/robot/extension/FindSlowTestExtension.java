@@ -1,6 +1,6 @@
-package com.mc.testexample.basic.extension;
+package com.mc.testexample.robot.extension;
 
-import com.mc.testexample.basic.annotation.SlowTest;
+import com.mc.testexample.robot.annotation.SlowTest;
 import org.junit.jupiter.api.extension.AfterTestExecutionCallback;
 import org.junit.jupiter.api.extension.BeforeTestExecutionCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;

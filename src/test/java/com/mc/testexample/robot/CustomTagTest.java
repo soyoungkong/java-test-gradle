@@ -1,12 +1,11 @@
-package com.mc.testexample.basic;
+package com.mc.testexample.robot;
 
-import com.mc.testexample.basic.annotation.DevTest;
-import com.mc.testexample.basic.annotation.LocalTest;
-import com.mc.testexample.basic.annotation.ProdTest;
+import com.mc.testexample.robot.annotation.DevTest;
+import com.mc.testexample.robot.annotation.LocalTest;
+import com.mc.testexample.robot.annotation.ProdTest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class CustomTagTest {

@@ -1,9 +1,7 @@
-package com.mc.testexample.basic;
+package com.mc.testexample.robot;
 
-import com.mc.testexample.basic.annotation.SlowTest;
-import com.mc.testexample.basic.extension.FindSlowTestExtension;
+import com.mc.testexample.robot.extension.FindSlowTestExtension;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 

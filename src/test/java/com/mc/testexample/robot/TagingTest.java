@@ -1,4 +1,4 @@
-package com.mc.testexample.basic;
+package com.mc.testexample.robot;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
