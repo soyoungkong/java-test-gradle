@@ -39,9 +39,16 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter' // 스프링 부트 2.2부터 Junit5으로 탑재됨. (기존은 4)
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'    // JPA
+    implementation 'org.springframework.boot:spring-boot-starter-web' // web
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    compileOnly 'org.projectlombok:lombok:1.18.26'
-    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+
+    compileOnly 'org.projectlombok:lombok:1.18.26' // 럼복 
+    annotationProcessor 'org.projectlombok:lombok:1.18.26' // 럼복
+
+    testImplementation group: 'org.testcontainers', name: 'junit-jupiter', version: '1.18.1' // 테스트컨테이너
+    testImplementation "org.testcontainers:mysql:1.18.1" // 테스트컨테이너 DB 모듈
+
+    runtimeOnly("com.mysql:mysql-connector-j") // mysql : 3버젼 이후
 }
 
 

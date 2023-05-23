@@ -1,5 +1,18 @@
-server.address.ip: "192.168.0.1"
-server.resources_path.imgs: "/imgs"
+server:
+  address:
+    ip: "192.168.0.1"
+  resources_path:
+    imgs: "/imgs"
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:15432/javatest?useSSL=false&serverTimezone=Asia/Seoul&autoReconnect=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: "syscon"
+    password: "r023866677!"
+  jpa:
+    hibernate:
+      ddl-auto: update #테스트 시에는 create_drop으로 쓴다
 
 app:
   type: "EU"
