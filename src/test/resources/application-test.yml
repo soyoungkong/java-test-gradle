@@ -1,0 +1,14 @@
+#spring.database.url: jdbc:mysql://localhost:15432/javatest
+#spring.database.username: jdbc:mysql://localhost:15432/javatest
+#spring.database.password: jdbc:mysql://localhost:15432/javatest
+
+
+# 테스트 컨테이너
+spring:
+  datasource:
+    url: jdbc:tc:mysql:///javatest
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver  #tc 사용드라이버를 jdbc로 설정
+  jpa:
+    hibernate:
+      ddl-auto: create-drop #테스트 시에는 create_drop으로 쓴다
+    generate-ddl: true
