@@ -8,6 +8,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Optional;
 
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
 import static org.mockito.Mockito.*;
@@ -37,5 +38,25 @@ public class BddTest {
         // Verify -> Then
         then(partService).should(times(1)).notify(robot);
         // then(partService).shouldHaveNoMoreInteractions(); // 더이상 인터렉션이 없는지 = verifyNoMoreInteractions(partService);
+    }
+
+
+    // 연습용
+    @Test
+    void releaseNewRobot(@Mock PartService partService, @Mock RobotRepository robotRepository){
+        // Given
+        RobotService robotService = new RobotService(partService, robotRepository);
+        Robot robot = new Robot(1000, "신형 로봇1");
+        given(robotRepository.save(robot)).willReturn(robot);
+        assertNull(robot.getOpenedDateTime());
+
+        // When
+        robotService.releaseNewRobot(robot);
+
+        // Then
+        assertEquals(robot.getModelStatus(), ModelStatus.RELEASED);
+        assertNotNull(robot.getOpenedDateTime());
+        // assertNotNull(robot.getPart());
+        then(partService).should().notify(robot);
     }
 }

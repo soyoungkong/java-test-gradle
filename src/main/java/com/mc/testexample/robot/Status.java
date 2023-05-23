@@ -1,5 +1,5 @@
 package com.mc.testexample.robot;
 
-public enum RobotStatus {
+public enum Status {
     AWAITING, MOVING, STOPPED, ERROR
 }

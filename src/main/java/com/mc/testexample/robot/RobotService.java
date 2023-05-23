@@ -25,4 +25,12 @@ public class RobotService {
         partService.findById(partId); // verify 테스트용
         return robot;
     }
+
+    // 연습용
+    public Robot releaseNewRobot(Robot robot){
+        robot.release();
+        Robot releasedRobot = repository.save(robot);
+        partService.notify(robot);
+        return releasedRobot;
+    }
 }

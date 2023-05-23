@@ -26,7 +26,7 @@ class RobotBasicTest {
                     new Robot(10);
                     Thread.sleep(1000);
                 }),
-                () -> assertEquals(RobotStatus.AWAITING, robot.getStatus(), () -> "로봇 초기 상태는 무조건 " + RobotStatus.AWAITING + " 이어야 합니다."),
+                () -> assertEquals(Status.AWAITING, robot.getStatus(), () -> "로봇 초기 상태는 무조건 " + Status.AWAITING + " 이어야 합니다."),
                 () -> assertTrue(robot.getTimeout() > 10, () -> "로봇 타임 아웃값은 10보다 커야합니다.")
         );
     }
@@ -43,10 +43,10 @@ class RobotBasicTest {
         //assertEquals(RobotStatus.AWAITING, robot.getStatus(), () -> "로봇 초기 상태는 무조건 " + RobotStatus.AWAITING +" 이어야 합니다.");
 
         // 에러 메시지를 만드는 방식이 복잡하면 Supplier<String>으로 작성, 간추리면 위와 같다.
-        assertEquals(RobotStatus.AWAITING, robot.getStatus(), new Supplier<String>() {
+        assertEquals(Status.AWAITING, robot.getStatus(), new Supplier<String>() {
             @Override
             public String get() {
-                return "로봇 초기 상태는 무조건 " + RobotStatus.AWAITING + " 이어야 합니다.";
+                return "로봇 초기 상태는 무조건 " + Status.AWAITING + " 이어야 합니다.";
             }
         });
     }
