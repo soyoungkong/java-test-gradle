@@ -41,9 +41,11 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'    // JPA
     implementation 'org.springframework.boot:spring-boot-starter-web' // web
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.projectlombok:lombok:1.18.22'
 
     compileOnly 'org.projectlombok:lombok:1.18.26' // 럼복 
     annotationProcessor 'org.projectlombok:lombok:1.18.26' // 럼복
+    testAnnotationProcessor 'org.projectlombok:lombok' // 럼복 - 테스트 코드에서 인식
 
     testImplementation group: 'org.testcontainers', name: 'junit-jupiter', version: '1.18.1' // 테스트컨테이너
     testImplementation "org.testcontainers:mysql:1.18.1" // 테스트컨테이너 DB 모듈
